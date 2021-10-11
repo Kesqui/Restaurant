@@ -4,12 +4,12 @@ import { StyleSheet } from 'react-native';
 import { CarItems } from './CarItems';
 
 
-export const Header = ({addItem}) => {
+export const Header = ({addItem,suma,storeQuanty,foods,setStoreQuanty}) => {
     return (
         <View style={styles.container}>
             <Text>Food Market</Text>
             <View style={styles.carItem}>
-                Car:{addItem}
+                <CarItems storeQuanty={storeQuanty} foods={foods} suma={suma} addItem={addItem} setStoreQuanty={setStoreQuanty}/>
             </View>
         </View>
     )

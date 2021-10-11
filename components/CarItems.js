@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { Text, View } from 'react-native'
+import { FlatList } from 'react-native-web'
 
-export const CarItems = ({foods}) => {
-    const handleList=Object.keys(foods).map((key)=>({key,Ref:foods[key].ref,Product:foods[key].name,price:foods[key].price}))
-    return (
-        <View>
-            <Text>Car:{}</Text>
-        </View>
+export const CarItems = ({fillItems}) => {
+    console.log(fillItems, 'cart');
+    return(
+        fillItems && fillItems.length > 0 ? fillItems.map(item=>(
+            <Text>{`${item.key} ${item.product} ${item.ref} ${item.price}` }</Text>
+        )) : null
     )
 }
+    
+
+

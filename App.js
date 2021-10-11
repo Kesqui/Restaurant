@@ -6,6 +6,10 @@ import { FoodsList } from './components/FoodsList';
 import { Header } from './components/Header';
 
 export default function App() {
+  const [addItem,setAdditem]=useState('')
+  const [storeQuanty,setStoreQuanty]=useState([])
+
+  const [suma,setSuma]=useState(0)
   const foods={
     pinneapple:{
       fname:'Pineapple',
@@ -23,15 +27,14 @@ export default function App() {
       price:5000
     },
   }
-  const [addItem,setAdditem]=useState(0)
 
   return (
     <View style={styles.container}>
       <View style={styles.headerStyle}>
-        <Header addItem={addItem}/>
+        <Header addItem={addItem} foods={foods} suma={suma} storeQuanty={storeQuanty} setStoreQuanty={setStoreQuanty}/>
       </View>
       <View>
-        <FoodsList addItem={addItem} setAdditem={setAdditem}/>
+        <FoodsList addItem={addItem} foods={foods} setSuma={setSuma} suma={suma} setAdditem={setAdditem} storeQuanty={storeQuanty} setStoreQuanty={setStoreQuanty}/>
       </View>
     </View>
   );
